@@ -1,0 +1,55 @@
+---
+name: Home
+route: /
+menu: Documentations
+---
+
+# Wego Health React UI Kit
+
+
+## Introduction
+This is common repo for all react components, utilities for wego health projects.
+
+## Installation
+
+To install this library use following command.
+
+```
+yarn add wegohealth/wh-uikit
+```
+
+In case installtion doesn't work. Try doing followings
+
+### Clear Yarn Cache
+
+```
+yarn cache clean
+```
+
+If still not then try following
+
+```
+yarn add wegohealth/wh-uikit --network-concurrency 1
+```
+
+## Usage
+
+### Usage of Components
+
+Components can be imported as follow
+
+```
+import { ChipList } from 'wh-uikit';
+```
+
+
+### Usage of utility functions
+
+All utility functions are exported under one object called utils
+
+```
+import { utils } from 'wh-uikit';
+
+
+utils.getRelativeTimeString(moment());
+```

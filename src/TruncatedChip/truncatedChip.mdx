@@ -1,0 +1,57 @@
+---
+name: TruncatedChip
+menu: Components
+route: /components/truncated-chip
+---
+
+import { Playground, Props } from "docz";
+import FaceIcon from "@material-ui/icons/Face";
+
+import TruncatedChip from ".";
+
+# TruncatedChip
+
+Uses https://material-ui.com/components/chips/ with extended behaviour of truncating string based on maxChars prop.
+
+## Props
+
+<Props of={TruncatedChip} />
+
+## Example
+
+### Simple Text
+
+<Playground>
+  <TruncatedChip
+    label="Long Text goes here Long Text goes here Long Text goes here"
+    maxChars={40}
+  />
+</Playground>
+
+### Icon and Delete option
+
+<Playground>
+  <TruncatedChip
+    variant="outlined"
+    size="small"
+    color="secondary"
+    icon={<FaceIcon />}
+    onDelete={() => alert("Deleted")}
+    label="Long Text goes here Long Text goes here Long Text goes here"
+    maxChars={45}
+  />
+</Playground>
+
+### Passing Custom Truncated String
+
+<Playground>
+  <TruncatedChip
+    variant="outlined"
+    size="small"
+    color="secondary"
+    icon={<FaceIcon />}
+    onDelete={() => alert("Deleted")}
+    label="Long Text goes here Long Text goes here Long Text goes here"
+    truncatedLabel="Long Text goes here..."
+  />
+</Playground>

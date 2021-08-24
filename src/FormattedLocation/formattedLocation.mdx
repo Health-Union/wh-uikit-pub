@@ -1,0 +1,227 @@
+---
+name: FormattedLocation
+menu: Components
+route: /components/formatted-location
+---
+
+import { Playground, Props } from "docz";
+
+import FormattedLocation from ".";
+
+# FormattedLocation
+
+Accepts, city name, ISO standard (country and state codes) and returns formatted Location with compact or full address.
+
+## Props
+
+<Props of={FormattedLocation} />
+
+## Examples
+
+### City = Boston, State = ma, Country = us
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "us",
+        name: "USA"
+      },
+      stateProvince: {
+        code: "ma",
+        name: "Massachusetts"
+      },
+      city: "Boston"
+    }}
+  />
+</Playground>
+
+### State=ma, Country=us
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "us",
+        name: "USA"
+      },
+      stateProvince: {
+        code: "ma",
+        name: "Massachusetts"
+      }
+    }}
+  />
+</Playground>
+
+### Country=us,
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "us",
+        name: "United State of America"
+      }
+    }}
+  />
+</Playground>
+
+### City=Melbourne, Country=AU
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "au",
+        name: "Australia"
+      },
+      city: "Melbourne"
+    }}
+  />
+</Playground>
+
+### City=boston, State=ma, Country=us, Compact=true
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "us",
+        name: "USA"
+      },
+      stateProvince: {
+        code: "ma",
+        name: "Massachusetts"
+      },
+      city: "Boston"
+    }}
+    compact
+  />
+</Playground>
+
+### State=ma, Country=us, Compact=true
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "us",
+        name: "USA"
+      },
+      stateProvince: {
+        code: "ma",
+        name: "Massachusetts"
+      }
+    }}
+    compact
+  />
+</Playground>
+
+### Country=us, compact=true
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "us",
+        name: "USA"
+      }
+    }}
+    compact
+  />
+</Playground>
+
+### City=Melbourne, Country=AU, Compact=true
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "au",
+        name: "Australia"
+      },
+      city: "Melbourne"
+    }}
+    compact
+  />
+</Playground>
+
+### In case provided country is not a code or does not have matching name, it returns the country
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "sp",
+        name: "Singapore"
+      }
+    }}
+  />
+</Playground>
+
+### country="SINGAPORE" Set's first character of country to capital and rest to lower
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "sp",
+        name: "SINGAPORE"
+      }
+    }}
+  />
+</Playground>
+
+### City first character capital of each word, City=new york city, State=ny, Country=us, Compact=true
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "us",
+        name: "USA"
+      },
+      stateProvince: {
+        code: "ny",
+        name: "New york"
+      },
+      city: "new york city"
+    }}
+    compact
+  />
+</Playground>
+
+### returns country only if out of US
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "ca",
+        name: "Canada"
+      },
+      stateProvince: {
+        code: "08",
+        name: "Massachusetts"
+      },
+      city: "Quebec"
+    }}
+    compact
+  />
+</Playground>
+
+<Playground>
+  <FormattedLocation
+    location={{
+      country: {
+        code: "ca",
+        name: "Canada"
+      },
+      stateProvince: {
+        code: "08",
+        name: "Massachusetts"
+      },
+      city: "Quebec"
+    }}
+  />
+</Playground>

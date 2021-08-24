@@ -1,0 +1,156 @@
+---
+name: ChipList
+menu: Components
+route: /components/chip-list
+---
+
+import { Playground, Props } from "docz";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+
+import ChipList from ".";
+
+# ChipList
+
+Shows list of chips and with built-in behavior of show more/less for large lists.
+
+## Props
+
+<Props of={ChipList} />
+
+## Examples
+
+### Default
+
+<Playground>
+  <ChipList
+    list={[
+      "Education",
+      "Entertainment",
+      "Heath-Advocacy",
+      "Heath-Online Communities"
+    ]}
+    limit={3}
+  />
+</Playground>
+
+### Bulleted
+
+<Playground>
+  <ChipList
+    list={[
+      "Education",
+      "Entertainment",
+      "Heath-Advocacy",
+      "Heath-Online Communities"
+    ]}
+    limit={3}
+    showBullets
+  />
+</Playground>
+
+### Bullet Color
+
+<Playground>
+  <ChipList
+    list={[
+      "Education",
+      "Entertainment",
+      "Heath-Advocacy",
+      "Heath-Online Communities"
+    ]}
+    limit={3}
+    showBullets
+    bulletColor="red"
+  />
+</Playground>
+
+### Custom Labels
+
+<Playground>
+  <ChipList
+    list={[
+      "Education",
+      "Entertainment",
+      "Heath-Advocacy",
+      "Heath-Online Communities"
+    ]}
+    limit={3}
+    showMoreLabel="More"
+    showLessLabel="Less"
+  />
+</Playground>
+
+### Clickable Chips
+
+<Playground>
+  <ChipList
+    list={[
+      { label: "Education", href: "https://google.com" },
+      { label: "Entertainment", href: "https://google.com" },
+      { label: "Heath-Advocacy", href: "https://google.com" },
+      { label: "Heath-Online Communities", href: "https://google.com" }
+    ]}
+    limit={3}
+  />
+</Playground>
+
+### Example of less number chips
+
+<Playground>
+  <ChipList list={["Education", "Entertainment"]} limit={3} />
+</Playground>
+
+### Chip Brand Colors
+
+<Playground>
+  <ChipList
+    list={["Education", "Entertainment", "Heath-Advocacy"]}
+    limit={2}
+    chipProps={{ color: "secondary" }}
+    showBullets
+  />
+</Playground>
+
+### Examples of wrapping ChipList inside Card components
+
+<Playground>
+  <Card style={{ width: '350px', float: 'left', marginLeft: '5px', height: '180px', overflow:'scroll' }}>
+    <CardContent>
+      <Typography color="textSecondary" variant='h5'>
+        Industry experience
+      </Typography>
+      <br />
+      <ChipList 
+        list={[
+          { label: 'Education', href: 'https://google.com' },
+          { label: 'Entertainment', href: 'https://google.com' },
+          { label: 'Heath-Advocacy', href: 'https://google.com' },
+          { label: 'Heath-Online Communities', href: 'https://google.com' },
+        ]}
+        limit={3}
+        showBullets
+      />
+    </CardContent>
+  </Card>
+
+  <Card style={{ width: '350px', float: 'left', marginLeft: '5px', height: '180px', overflow:'scroll' }}>
+    <CardContent>
+      <Typography color="textSecondary" variant='h5'>
+        Area of Expertise
+      </Typography>
+      <br />
+      <ChipList 
+        list={[
+          'Blogger',
+          'Consumer Engagement',
+          'Consumer Insights',
+          'IT Management'
+        ]}
+        limit={3}
+        showBullets
+      />
+    </CardContent>
+  </Card>
+</Playground>

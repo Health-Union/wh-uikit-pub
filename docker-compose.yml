@@ -1,0 +1,16 @@
+version: "3.2"
+
+services:
+  wh-uikit:
+    build: .
+    working_dir: /mnt/code
+    volumes:
+      - .:/mnt/code
+      - yarn-cache:/usr/local/share/.cache/yarn
+      - node-modules:/mnt/code/node_modules
+      - ~/.gitconfig:/root/.gitconfig
+    ports:
+      - 3030:3000
+volumes:
+  yarn-cache:
+  node-modules:

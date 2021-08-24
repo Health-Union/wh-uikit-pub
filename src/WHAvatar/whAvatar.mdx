@@ -1,0 +1,60 @@
+---
+name: WHAvatar
+menu: Components
+route: /components/wh-avatar
+---
+
+import { Props, Playground } from "docz";
+
+import { WHAvatar } from ".";
+
+## WHAvatar
+
+A general Avatar Component to generate, photo, Text or default User Avatar. It is based on material-ui avatar https://material-ui.com/components/avatars/
+
+## Props
+
+<Props of={WHAvatar} />
+
+## With icon
+
+<Playground>
+  <WHAvatar />
+</Playground>
+
+## With default settings
+
+<Playground>
+  <WHAvatar initials="AJ" photo="//placekitten.com/40/40" />
+</Playground>
+
+## With Photo shape="square"
+
+<Playground>
+  <WHAvatar
+    initials="AJ"
+    photo="//placekitten.com/200/300"
+    shape="square"
+    size={WHAvatar.sizes.large}
+  />
+</Playground>
+
+## Display initials with Shape="circle" and Size="large"
+
+<Playground>
+  <WHAvatar initials="AJ" shape="circle" size={WHAvatar.sizes.large} />
+</Playground>
+
+## Display initials with custom shape and colors
+
+<Playground>
+  <WHAvatar
+    initials="AJ"
+    size={WHAvatar.sizes.large}
+    variant="square"
+    colors={{
+      background: "#ffaaaa",
+      text: "#000"
+    }}
+  />
+</Playground>

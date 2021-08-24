@@ -1,0 +1,145 @@
+---
+name: DisplayDate
+menu: Components
+route: /components/display-date
+---
+
+import { Playground, Props } from "docz";
+import { FormLabel } from "@material-ui/core";
+import moment from "moment";
+
+import { DisplayDate } from "./DisplayDate";
+
+# DisplayDate
+
+Shows different date format e.g. 'YYYY-MM-DD, M/D, MMMM Do, YYYY'
+
+## Props
+
+<Props of={DisplayDate} />
+
+## Examples
+
+### Default Compact format
+
+<Playground>
+  <div>
+    <FormLabel>Compact Format: </FormLabel>
+    <DisplayDate date={moment().format("YYYY-MM-DD")} />
+  </div>
+</Playground>
+
+### Short Date Format
+
+<Playground>
+  <div>
+    <FormLabel>Short Format: </FormLabel>
+    <DisplayDate
+      date={moment().format("YYYY-MM-DD")}
+      format={DisplayDate.formats.short}
+    />
+  </div>
+</Playground>
+
+### Readable Date Format
+
+<Playground>
+  <div>
+    <FormLabel>Readable Format: </FormLabel>
+    <DisplayDate
+      date={moment().format("YYYY-MM-DD")}
+      format={DisplayDate.formats.readable}
+    />
+  </div>
+</Playground>
+
+### Short Readable Date Format
+
+<Playground>
+  <div>
+    <FormLabel>Short Readable Format: </FormLabel>
+    <DisplayDate
+      date={moment().format("YYYY-MM-DD")}
+      format={DisplayDate.formats.shortReadable}
+    />
+  </div>
+</Playground>
+
+### Age Format
+
+<Playground>
+  <div>
+    <FormLabel>Age Format: </FormLabel>
+    <DisplayDate
+      date={moment()
+        .subtract(30, "years")
+        .format("YYYY-MM-DD")}
+      format={DisplayDate.formats.age}
+    />
+  </div>
+</Playground>
+
+### Long Format
+
+<Playground>
+  <div>
+    <FormLabel>Long Format: </FormLabel>
+    <DisplayDate date={moment().format()} format={DisplayDate.formats.long} />
+  </div>
+</Playground>
+
+### Relative Formats
+
+#### Today
+
+<Playground>
+  <div>
+    <FormLabel>Relative Date Format to show 'Today': </FormLabel>
+    <DisplayDate
+      date={moment().format("YYYY-MM-DD")}
+      format={DisplayDate.formats.relative}
+    />
+  </div>
+</Playground>
+
+#### Tomorrow
+
+<Playground>
+  <div>
+    <FormLabel>Relative Date Format to show 'Tomorrow': </FormLabel>
+    <DisplayDate
+      date={moment()
+        .add(1, "days")
+        .format("YYYY-MM-DD")}
+      format={DisplayDate.formats.relative}
+    />
+  </div>
+</Playground>
+
+#### Last Week (M/D)
+
+<Playground>
+  <div>
+    <FormLabel>Relative Date Format to show 'Last Week (M/D)': </FormLabel>
+    <DisplayDate
+      date={moment()
+        .subtract(8, "days")
+        .format("YYYY-MM-DD")}
+      format={DisplayDate.formats.relative}
+    />
+  </div>
+</Playground>
+
+#### Next Week (M/D)
+
+<Playground>
+  <div>
+    <FormLabel>Relative Date Format to show 'Next Week (M/D)': </FormLabel>
+    <DisplayDate
+      date={moment()
+        .add(9, "days")
+        .format("YYYY-MM-DD")}
+      format={DisplayDate.formats.relative}
+    />
+  </div>
+</Playground>

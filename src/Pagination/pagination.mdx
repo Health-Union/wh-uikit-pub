@@ -1,0 +1,102 @@
+---
+name: Pagination
+menu: Components
+route: /components/pagination
+---
+
+import { useState } from "react";
+import { Playground, Props } from "docz";
+
+import { Pagination } from ".";
+
+# Pagination
+
+Pagination component renders, previous/next, first/last pages buttons along with pageSize and currently viewing record set.
+
+## Props
+
+<Props of={Pagination} />
+
+## Examples
+
+<Playground>
+  {() => {
+    const [currentPage, setCurrentPage] = useState({
+      pageNumber: 1,
+      pageSize: 50
+    });
+    return (
+      <Pagination
+        currentPage={currentPage}
+        onCurrentPageChange={setCurrentPage}
+        totals={{
+          totalItems: 1059,
+          totalPages: Math.ceil(1059 / currentPage.pageSize)
+        }}
+      />
+    );
+  }}
+</Playground>
+
+### Without Viewing and Page Size
+
+<Playground>
+  {() => {
+    const [currentPage, setCurrentPage] = useState({
+      pageNumber: 1,
+      pageSize: 50
+    });
+    return (
+      <Pagination
+        currentPage={currentPage}
+        onCurrentPageChange={setCurrentPage}
+        totals={{
+          totalItems: 1064,
+          totalPages: Math.ceil(1064 / currentPage.pageSize)
+        }}
+        showPageSize={false}
+        showViewing={false}
+      />
+    );
+  }}
+</Playground>
+
+### Disabled Pagination
+
+<Playground>
+  {() => {
+    const [currentPage, setCurrentPage] = useState({
+      pageNumber: 1,
+      pageSize: 50
+    });
+    return (
+      <Pagination
+        currentPage={currentPage}
+        onCurrentPageChange={setCurrentPage}
+        totals={{
+          totalItems: 1050,
+          totalPages: Math.ceil(1050 / currentPage.pageSize)
+        }}
+        disabled
+      />
+    );
+  }}
+</Playground>
+
+### With no totals
+
+<Playground>
+  {() => {
+    const [currentPage, setCurrentPage] = useState({
+      pageNumber: 1,
+      pageSize: 50
+    });
+    return (
+      <Pagination
+        currentPage={currentPage}
+        onCurrentPageChange={setCurrentPage}
+        totals={null}
+      />
+    );
+  }}
+</Playground>

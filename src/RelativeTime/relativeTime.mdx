@@ -1,0 +1,274 @@
+---
+name: RelativeTime
+menu: Components
+route: /components/relative-time
+---
+
+import { Playground, Props } from "docz";
+import moment from "moment";
+import { Box, FormLabel } from "@material-ui/core";
+
+import { RelativeTime } from "./RelativeTime";
+
+# RelativeTime
+
+Shows relative time e.g. 'Just Now or 'A few months ago' from current time.
+
+## Props
+
+<Props of={RelativeTime} />
+
+## Examples
+
+### Just Now
+
+<Playground>
+  <div>
+    <FormLabel>
+      Date:{" "}
+      {moment()
+        .subtract(1, "minutes")
+        .format("YYYY-MM-DD hh:mm:ss")}
+      :{" "}
+    </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(1, "minutes")
+        .toISOString()}
+    />
+  </div>
+</Playground>
+
+### A few hours ago
+
+<Playground>
+  <div>
+    <FormLabel>
+      Date:{" "}
+      {moment()
+        .subtract(2, "hours")
+        .format("YYYY-MM-DD hh:mm:ss")}
+      :{" "}
+    </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(2, "hours")
+        .toISOString()}
+    />
+  </div>
+</Playground>
+
+### Today
+
+<Playground>
+  <div>
+    <FormLabel>
+      Date:{" "}
+      {moment()
+        .subtract(5, "hours")
+        .format("YYYY-MM-DD hh:mm:ss")}
+      :{" "}
+    </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(5, "hours")
+        .toISOString()}
+    />
+  </div>
+</Playground>
+
+### Yesterday
+
+<Playground>
+  <div>
+    <FormLabel>
+      Date:{" "}
+      {moment()
+        .subtract(25, "hours")
+        .format("YYYY-MM-DD hh:mm:ss")}
+      :{" "}
+    </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(25, "hours")
+        .toISOString()}
+    />
+  </div>
+</Playground>
+
+### This week
+
+<Playground>
+  <div>
+    <FormLabel>
+      Date:{" "}
+      {moment()
+        .subtract(3, "days")
+        .format("YYYY-MM-DD hh:mm:ss")}
+      :{" "}
+    </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(3, "days")
+        .toISOString()}
+    />
+  </div>
+</Playground>
+
+### This Month
+
+<Playground>
+  <div>
+    <FormLabel>
+      Date:{" "}
+      {moment()
+        .subtract(15, "days")
+        .format("YYYY-MM-DD hh:mm:ss")}
+      :{" "}
+    </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(15, "days")
+        .toISOString()}
+    />
+  </div>
+</Playground>
+
+### A few months ago
+
+<Playground>
+  <div>
+    <FormLabel>
+      Date:{" "}
+      {moment()
+        .subtract(2, "months")
+        .format("YYYY-MM-DD hh:mm:ss")}
+      :{" "}
+    </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(2, "months")
+        .toISOString()}
+    />
+  </div>
+</Playground>
+
+### Within 180 days
+
+<Playground>
+  <div>
+    <FormLabel>
+      Date:{" "}
+      {moment()
+        .subtract(4, "months")
+        .format("YYYY-MM-DD hh:mm:ss")}
+      :{" "}
+    </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(4, "months")
+        .toISOString()}
+    />
+  </div>
+</Playground>
+
+### Within the last year
+
+<Playground>
+  <div>
+    <FormLabel>
+      Date:{" "}
+      {moment()
+        .subtract(8, "months")
+        .format("YYYY-MM-DD hh:mm:ss")}
+      :{" "}
+    </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(8, "months")
+        .toISOString()}
+    />
+  </div>
+</Playground>
+
+### Over a year ago
+
+<Playground>
+  <div>
+    <FormLabel>
+      Date:{" "}
+      {moment()
+        .subtract(16, "months")
+        .format("YYYY-MM-DD hh:mm:ss")}
+      :{" "}
+    </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(16, "months")
+        .toISOString()}
+    />
+  </div>
+</Playground>
+
+### Typography support
+
+<Playground>
+  <Box>
+    <FormLabel>h4/primary: </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(16, "months")
+        .toISOString()}
+      variant="h4/primary"
+    />
+  </Box>
+  <Box>
+    <FormLabel>h6/black/disabled: </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(16, "months")
+        .toISOString()}
+      variant="h6/black/disabled"
+    />
+  </Box>
+  <Box>
+    <FormLabel>default variant: </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(16, "months")
+        .toISOString()}
+    />
+  </Box>
+  <Box>
+    <FormLabel>typography opt out: </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(16, "months")
+        .toISOString()}
+      disableTypography
+    />
+  </Box>
+</Playground>
+
+### Tooltip options
+
+<Playground>
+  <Box>
+    <FormLabel>tooltipFormat=short: </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(16, "months")
+        .toISOString()}
+      tooltipFormat={RelativeTime.tooltipFormats.short}
+    />
+  </Box>
+  <Box>
+    <FormLabel>tooltip opt out: </FormLabel>
+    <RelativeTime
+      date={moment()
+        .subtract(16, "months")
+        .toISOString()}
+      disableTooltip
+    />
+  </Box>
+</Playground>

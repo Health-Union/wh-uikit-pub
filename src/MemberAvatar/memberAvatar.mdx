@@ -1,0 +1,188 @@
+---
+name: MemberAvatar
+menu: Components
+route: /components/member-avatar
+---
+
+import { Playground, Props } from "docz";
+
+import { MemberAvatar } from "./MemberAvatar";
+
+# MemberAvatar
+
+Shows avatar of first character of member's (firstName, lastName or displayName) or if provided with photo url will show photo avatar.
+Uses WHAvatar component
+
+## Props
+
+<Props of={MemberAvatar} />
+
+## Examples
+
+### First Name
+
+<Playground>
+  <MemberAvatar
+    profile={{
+      id: 2339,
+      firstName: "John",
+      picture: null
+    }}
+  />
+</Playground>
+
+### With Avatar persisted True
+
+<Playground>
+  <MemberAvatar
+    profile={{
+      id: 2458,
+      firstName: "John",
+      lastName: "Doe",
+      picture: {
+        persisted: true,
+        urls: {
+          micro: "//placekitten.com/40/40",
+          thumb: "//placekitten.com/100/100",
+          small: "//placekitten.com/256/256",
+          medium: "//placekitten.com/350/350"
+        }
+      }
+    }}
+    size={MemberAvatar.sizes.small}
+  />
+  <MemberAvatar
+    profile={{
+      id: 2458,
+      firstName: "John",
+      lastName: "Doe",
+      picture: {
+        persisted: true,
+        urls: {
+          micro: "//placekitten.com/40/40",
+          thumb: "//placekitten.com/100/100",
+          small: "//placekitten.com/256/256",
+          medium: "//placekitten.com/350/350"
+        }
+      }
+    }}
+    size={MemberAvatar.sizes.medium}
+  />
+  <MemberAvatar
+    profile={{
+      id: 2458,
+      firstName: "John",
+      lastName: "Doe",
+      picture: {
+        persisted: true,
+        urls: {
+          micro: "//placekitten.com/40/40",
+          thumb: "//placekitten.com/100/100",
+          small: "//placekitten.com/256/256",
+          medium: "//placekitten.com/350/350"
+        }
+      }
+    }}
+    size={MemberAvatar.sizes.large}
+  />
+  <MemberAvatar
+    profile={{
+      id: 2458,
+      firstName: "John",
+      lastName: "Doe",
+      picture: {
+        persisted: true,
+        urls: {
+          micro: "//placekitten.com/40/40",
+          thumb: "//placekitten.com/100/100",
+          small: "//placekitten.com/256/256",
+          medium: "//placekitten.com/350/350"
+        }
+      }
+    }}
+    size={MemberAvatar.sizes.extraLarge}
+  />
+</Playground>
+
+### Display Name
+
+<Playground>
+  <MemberAvatar
+    profile={{
+      id: 2154,
+      firstName: "John",
+      lastName: "Doe",
+      displayName: "Display",
+      picture: null
+    }}
+  />
+</Playground>
+
+### Size
+
+<Playground>
+  <MemberAvatar
+    profile={{
+      id: 3223,
+      firstName: "John",
+      lastName: "Doe",
+      displayName: "Display",
+      picture: null
+    }}
+    size={MemberAvatar.sizes.medium}
+  />
+</Playground>
+
+### Custom Color
+
+<Playground>
+  <MemberAvatar
+    profile={{
+      id: 3223,
+      firstName: "John",
+      lastName: "Doe",
+      displayName: "Display",
+      picture: null
+    }}
+    size={MemberAvatar.sizes.medium}
+    backgroundColor="#e53935"
+    color="#EEEEEE"
+  />
+</Playground>
+
+### Custom Style
+
+<Playground>
+  <MemberAvatar
+    profile={{
+      id: 1251,
+      firstName: "John",
+      lastName: "Doe",
+      displayName: "Display",
+      picture: null
+    }}
+    style={{ width: "120px", height: "120px", fontSize: "4rem" }}
+  />
+</Playground>
+
+### Custom Shape
+
+<Playground>
+  <MemberAvatar
+    profile={{
+      id: 2845,
+      firstName: "John",
+      lastName: "Doe",
+      displayName: "Display",
+      picture: null
+    }}
+    size={MemberAvatar.sizes.medium}
+    variant="square"
+  />
+</Playground>
+
+### With Null Values
+
+<Playground>
+  <MemberAvatar profile={{ id: 3223 }} backgroundColor="#BDBDBD" />
+</Playground>

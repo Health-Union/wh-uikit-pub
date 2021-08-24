@@ -1,0 +1,96 @@
+---
+name: MemberCard
+menu: Components
+route: /components/member-card
+---
+
+import { Playground, Props } from "docz";
+
+import MemberCard from ".";
+
+# MemberCard
+
+## Props
+
+<Props of={MemberCard} />
+
+## Examples
+
+### Default. elevation={1}
+
+<Playground>
+  <MemberCard
+    profile={{
+      id: 2339,
+      firstName: "John",
+      lastName: "Doe",
+      picture: {
+        persisted: true,
+        urls: {
+          medium: "https://material-ui.com/static/images/avatar/1.jpg",
+          thumb: "https://material-ui.com/static/images/avatar/1.jpg"
+        }
+      }
+    }}
+    conditionName="Addison's Decease"
+    to="/"
+    elevation={1}
+  />
+</Playground>
+
+### Without Name and Condition. elevation={2}
+
+<Playground>
+  <MemberCard
+    profile={{
+      id: 1254,
+      picture: {
+        persisted: true,
+        urls: {
+          thumb: "https://material-ui.com/static/images/avatar/1.jpg",
+          medium: "https://material-ui.com/static/images/avatar/1.jpg"
+        }
+      }
+    }}
+    elevation={2}
+  />
+</Playground>
+
+### With Large Name. elevation={3}
+
+<Playground>
+  <MemberCard
+    profile={{
+      id: 2339,
+      firstName: "John",
+      lastName: "Doe Doe Doe Doe Doe Doe Doe Doe Doe Doe Doe Doe",
+      picture: {
+        persisted: true,
+        urls: {
+          thumb: "https://material-ui.com/static/images/avatar/1.jpg",
+          medium: "https://material-ui.com/static/images/avatar/1.jpg"
+        }
+      }
+    }}
+    elevation={3}
+  />
+</Playground>
+
+### With Name only
+
+<Playground>
+  <MemberCard
+    profile={{
+      id: 2458,
+      firstName: "John",
+      lastName: "Doe",
+      picture: {
+        persisted: false,
+        urls: {
+          medium: "",
+          thumb: ""
+        }
+      }
+    }}
+  />
+</Playground>
